@@ -2,7 +2,6 @@ version: 2
 jobs:
   build:
     docker:
-
       - image: circleci/python:2.7.14
         environment:
           FLASK_CONFIG: testing
@@ -28,6 +27,8 @@ jobs:
           command: |
             echo . helloworld/bin/activate
             echo pyinstaller -F hello_world.py
+            pwd
+            ls -alh
             docker build -t thalhalla/$IMAGE_NAME:$TAG .
             echo "echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin"
             echo docker push ariv3ra/$IMAGE_NAME:$TAG
