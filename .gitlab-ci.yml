@@ -27,5 +27,6 @@ build:
   stage: build
   script:
     - docker build -t thalhalla/archbuilder .
+    - docker login 
     - docker push thalhalla/archbuilder
     - echo docker run my-docker-image /script/to/run/tests
