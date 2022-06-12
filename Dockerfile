@@ -11,7 +11,7 @@ RUN gpg-agent --daemon \
 && sh /docker-glibc-workaround.sh \
 && echo pacman Syu \
 && pacman -Syu --needed --noconfirm base-devel git \
-&& echo clearcache \
+&& echo clear pacman cache \
 && pacman -Scc --noconfirm \
 && echo user stuff \
 && useradd -m -G wheel -s /bin/bash pkguser \
