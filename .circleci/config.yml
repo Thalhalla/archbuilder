@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: archlinux:latest 
+
+      - image: circleci/python:2.7.14
         environment:
           FLASK_CONFIG: testing
     steps:
